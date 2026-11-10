@@ -235,16 +235,15 @@ class MLInferenceService:
 
         candidate_paths = [
             Path(settings.medfed_model_path) if settings.medfed_model_path else None,
+            Path("model-artifacts/best_global_model.pth"),
+            Path("/app/model-artifacts/best_global_model.pth"),
+            backend_dir / "model-artifacts" / "best_global_model.pth",
             workspace_root / "model-artifacts" / "best_global_model.pth",
             workspace_root / "model-artifacts" / "model.pth",
             repo_root / "model-artifacts" / "best_global_model.pth",
             workspace_root / "federated-learning" / "models" / "global" / "current" / "model.pth",
             workspace_root / "federated-learning" / "runs" / "fed-fibavg_none" / "best_global_model.pth",
-            workspace_root / "MedFed.ai-main" / "MedFed.ai-main" / "models" / "global" / "current" / "model.pth",
-            workspace_root / "MedFed.ai-main" / "MedFed.ai-main" / "runs" / "fed-fibavg_none" / "best_global_model.pth",
-            Path("C:/Users/srinu/Music/master fed/MedFed.ai-main/MedFed.ai-main/models/global/current/model.pth"),
-            Path("C:/megafedallmodels/fedv2/runs/fed-fibavg_none/best_global_model.pth"),
-            Path("C:/megafedallmodels/fedv2/models/global/current/model.pth"),
+            backend_dir.parent / "federated-learning" / "models" / "global" / "current" / "model.pth",
         ]
 
         for p in candidate_paths:
@@ -255,6 +254,28 @@ class MLInferenceService:
                     return p
             except Exception:
                 continue
+
+        # Optional fallback: Download from Hugging Face Hub if HF_MODEL_REPO or MEDFED_HF_REPO is set
+        hf_repo = os.getenv("MEDFED_HF_REPO") or os.getenv("HF_MODEL_REPO")
+        if hf_repo:
+            try:
+                from huggingface_hub import hf_hub_download
+                logger.info("Attempting to fetch model artifact from Hugging Face Hub: %s", hf_repo)
+                dest_dir = Path("model-artifacts")
+                dest_dir.mkdir(parents=True, exist_ok=True)
+                downloaded_file = hf_hub_download(
+                    repo_id=hf_repo,
+                    filename="best_global_model.pth",
+                    local_dir=str(dest_dir),
+                    token=os.getenv("HF_TOKEN"),
+                )
+                downloaded_path = Path(downloaded_file)
+                if downloaded_path.is_file() and downloaded_path.stat().st_size > 1024 * 1024:
+                    logger.info("Successfully fetched checkpoint from Hugging Face Hub: %s", downloaded_path)
+                    return downloaded_path
+            except Exception as e:
+                logger.warning("Failed to download model from Hugging Face Hub: %s", e)
+
         return None
 
     def initialize(self) -> None:

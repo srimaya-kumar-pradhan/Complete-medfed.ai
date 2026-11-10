@@ -77,11 +77,10 @@ class MedFedService:
 
         candidates = [
             Path(settings.medfed_dataset_path) if settings.medfed_dataset_path else None,
+            Path("federated-learning/Hospital_A/runs/gradcam_samples"),
             workspace_root / "federated-learning" / "Hospital_A" / "runs" / "gradcam_samples",
             workspace_root / "federated-learning" / "dataset",
-            workspace_root / "MedFed.ai-main" / "MedFed.ai-main" / "Hospital_A" / "runs" / "gradcam_samples",
-            Path("C:/Users/srinu/Music/fedlearning/DataSET"),
-            Path("C:/megafedallmodels/fedv2/Hospital_A/runs/gradcam_samples"),
+            backend_dir.parent / "federated-learning" / "Hospital_A" / "runs" / "gradcam_samples",
         ]
 
         valid_dirs: List[Path] = []

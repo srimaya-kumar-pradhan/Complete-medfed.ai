@@ -10,20 +10,30 @@ from app.core.config import get_settings
 
 settings = get_settings()
 
-connect_args = {}
-engine_kwargs = {"echo": settings.debug}
+db_url = settings.database_url.strip()
+# Normalize postgres:// to postgresql:// for SQLAlchemy 2.0+ compatibility
+if db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql://", 1)
 
-if settings.database_url.startswith("sqlite"):
+connect_args = {}
+engine_kwargs = {"echo": settings.debug and settings.environment != "production"}
+
+if db_url.startswith("sqlite"):
     connect_args["check_same_thread"] = False
 else:
+    # PostgreSQL / Supabase configuration
     engine_kwargs.update({
         "pool_pre_ping": True,
-        "pool_size": 10,
-        "max_overflow": 20,
+        "pool_size": 5,
+        "max_overflow": 10,
+        "pool_recycle": 300,
     })
+    # If connecting to a remote host (e.g. Supabase, AWS, Neon) and sslmode is not specified in query params
+    if "sslmode" not in db_url.lower() and not any(h in db_url.lower() for h in ["localhost", "127.0.0.1"]):
+        connect_args["sslmode"] = "require"
 
 engine = create_engine(
-    settings.database_url,
+    db_url,
     connect_args=connect_args,
     **engine_kwargs,
 )

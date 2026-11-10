@@ -50,29 +50,29 @@ class Settings(BaseSettings):
     # ML / Federated
     model_provider: str = "medfed"
     federated_node_id: str = "dev-node-001"
-    medfed_model_path: str = "C:/Users/srinu/Music/master fed/MedFed.ai-main/MedFed.ai-main/models/global/current/model.pth"
-    medfed_repo_path: str = "C:/Users/srinu/Music/master fed/MedFed.ai-main/MedFed.ai-main"
+    medfed_model_path: str = "model-artifacts/best_global_model.pth"
+    medfed_repo_path: str = "federated-learning"
     medfed_device: str = "auto"
     medfed_model_name: str = "MedFed DenseNet121-CheXNet-14Class"
     medfed_model_version: str = "v1.3 (Fed-FibAvg Global)"
     medfed_max_upload_bytes: int = 20 * 1024 * 1024  # 20 MB
-    medfed_dataset_path: str = "C:/Users/srinu/Music/fedlearning/DataSET"
+    medfed_dataset_path: str = ""
 
-    # SMTP / Real Email Alerts
+    # SMTP / Email Alerts (Defaults to mock in absence of credentials)
     smtp_host: str = "smtp.gmail.com"
     smtp_port: int = 587
     smtp_secure: bool = False
-    smtp_user: str = "sihdori7@gmail.com"
-    smtp_password: str = "zmay dnzr ktgx mrab"
-    smtp_from: str = "sihdori7@gmail.com"
-    email: str = "sihdori7@gmail.com"
-    app_psw: str = "zmay dnzr ktgx mrab"
+    smtp_user: str = ""
+    smtp_password: str = ""
+    smtp_from: str = "DORI Care Continuity <notifications@dori.gov.in>"
+    email: str = ""
+    app_psw: str = ""
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8", "extra": "ignore"}
 
     @property
     def cors_origin_list(self) -> list[str]:
-        return [origin.strip() for origin in self.cors_origins.split(",")]
+        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 
 
 @lru_cache
