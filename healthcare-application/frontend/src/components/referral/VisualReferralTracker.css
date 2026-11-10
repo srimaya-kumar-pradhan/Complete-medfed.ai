@@ -1,0 +1,473 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Visual Referral Tracker — Production Clean Standard
+   Strict Monochrome / Minimal Aesthetic
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.visual-referral-tracker {
+  background: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tracker-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tracker-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tracker-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #71717A);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tracker-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ref-id-pill code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--surface-subtle, #FAFAFA);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-default, #E4E4E7);
+  color: var(--text-primary, #09090B);
+}
+
+.tracker-patient-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary, #09090B);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.patient-id-sub {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted, #71717A);
+}
+
+.tracker-mode-switch {
+  display: flex;
+  background: var(--color-gray-100, #F4F4F5);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  padding: 2px;
+  gap: 2px;
+}
+
+.mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: none;
+  background: none;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted, #71717A);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mode-btn:hover {
+  color: var(--text-primary, #09090B);
+}
+
+.mode-btn.active {
+  background: var(--surface-card, #FFFFFF);
+  color: var(--text-primary, #09090B);
+  font-weight: 600;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+/* ─── Mode 1: Timeline Strip ─────────────────────────── */
+.timeline-container {
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.timeline-strip {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-width: 1040px;
+  padding: 6px 2px;
+}
+
+.timeline-node-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.timeline-node {
+  flex: 1;
+  background: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: all var(--transition-fast);
+  min-width: 140px;
+  outline: none;
+}
+
+.timeline-node:hover {
+  border-color: var(--text-primary, #18181B);
+  background-color: var(--surface-card, #FFFFFF);
+}
+
+.timeline-node.selected {
+  border-color: var(--text-primary, #18181B);
+  background: var(--surface-card, #FFFFFF);
+  box-shadow: var(--shadow-xs, 0 1px 3px rgba(0, 0, 0, 0.08));
+}
+
+.node-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+.timeline-node.completed .node-marker {
+  background: var(--text-primary, #18181B);
+  color: #FFFFFF;
+}
+
+.timeline-node.active .node-marker {
+  border: 2px solid var(--text-primary, #18181B);
+  background: var(--surface-card, #FFFFFF);
+  color: var(--text-primary, #18181B);
+  font-weight: 700;
+}
+
+.timeline-node.pending .node-marker {
+  background: var(--color-gray-200, #E4E4E7);
+  color: var(--text-muted, #71717A);
+}
+
+.node-stage {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #71717A);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.node-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  line-height: 1.3;
+  white-space: normal;
+}
+
+.node-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+  margin-top: 2px;
+}
+
+.node-ai-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  background: var(--surface-card, #FFFFFF);
+  color: var(--text-primary, #18181B);
+  border: 1px solid var(--border-default, #E4E4E7);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.timeline-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  color: var(--color-gray-300, #D4D4D8);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.timeline-connector.completed {
+  color: var(--text-primary, #18181B);
+}
+
+/* ─── Mode 2: Network Flow ───────────────────────────── */
+.network-container {
+  padding: 16px 8px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.network-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 860px;
+  gap: 8px;
+}
+
+.network-station {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: var(--radius-md, 8px);
+  background: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  width: 170px;
+  transition: all var(--transition-fast);
+}
+
+.network-station.completed {
+  border-color: var(--text-primary, #18181B);
+}
+
+.network-station.active {
+  border-color: var(--text-primary, #18181B);
+  box-shadow: var(--shadow-xs, 0 1px 3px rgba(0, 0, 0, 0.08));
+}
+
+.network-station.pending {
+  border-color: var(--border-default, #E4E4E7);
+  background: var(--surface-subtle, #FAFAFA);
+  opacity: 0.8;
+}
+
+.station-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: var(--text-primary, #18181B);
+}
+
+.station-type {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #71717A);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.station-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin-bottom: 4px;
+}
+
+.station-status {
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+}
+
+.station-status.highlight {
+  color: var(--text-primary, #09090B);
+  font-weight: 600;
+}
+
+.network-path {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.path-line {
+  width: 100%;
+  height: 2px;
+  background: var(--border-default, #E4E4E7);
+}
+
+.network-path.completed .path-line {
+  background: var(--text-primary, #18181B);
+}
+
+.network-path.in-progress .path-line {
+  background: var(--text-primary, #18181B);
+}
+
+.path-label {
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+  font-weight: 500;
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+/* ─── Selected Milestone Inspector Card ──────────────── */
+.milestone-inspector-card {
+  background: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 16px 20px;
+}
+
+.inspector-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+  padding-bottom: 10px;
+}
+
+.inspector-step-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #71717A);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.inspector-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 2px 0;
+}
+
+.inspector-stage {
+  font-size: 12px;
+  color: var(--text-secondary, #52525B);
+}
+
+.milestone-state-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.state-completed {
+  background: var(--color-success-bg, #F0FDF4);
+  color: var(--color-success-text, #15803D);
+  border: 1px solid var(--color-success-border, #BBF7D0);
+}
+
+.state-active {
+  background: var(--color-warning-bg, #FFFBEB);
+  color: var(--color-warning-text, #B45309);
+  border: 1px solid var(--color-warning-border, #FDE68A);
+}
+
+.state-pending {
+  background: var(--color-gray-100, #F4F4F5);
+  color: var(--text-muted, #71717A);
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+.inspector-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted, #71717A);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detail-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary, #09090B);
+  line-height: 1.4;
+}
+
+.inspector-clinical-event {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm, 6px);
+  font-size: 12px;
+  color: var(--text-primary, #09090B);
+  margin-top: 10px;
+}
+
+.inspector-action-row {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .inspector-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

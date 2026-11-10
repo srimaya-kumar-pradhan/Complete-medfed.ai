@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Badge Component — Minimal Functional Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  border-radius: 4px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+}
+
+.badge-sm {
+  padding: 2px 6px;
+  font-size: 0.6875rem;
+}
+
+.badge-md {
+  padding: 3px 8px;
+  font-size: 0.75rem;
+}
+
+.badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* Functional colors only */
+.badge-neutral,
+.badge-navy {
+  background-color: var(--surface-secondary, #F4F4F5);
+  color: var(--text-primary, #18181B);
+  border-color: var(--border-default, #E4E4E7);
+}
+
+.badge-teal,
+.badge-success {
+  background-color: var(--color-success-bg, #F0FDF4);
+  color: var(--color-success-text, #15803D);
+  border-color: var(--color-success-border, #BBF7D0);
+}
+
+.badge-warning,
+.badge-gold {
+  background-color: var(--color-warning-bg, #FFFBEB);
+  color: var(--color-warning-text, #B45309);
+  border-color: var(--color-warning-border, #FDE68A);
+}
+
+.badge-crimson,
+.badge-error {
+  background-color: var(--color-error-bg, #FEF2F2);
+  color: var(--color-error-text, #B91C1C);
+  border-color: var(--color-error-border, #FECACA);
+}

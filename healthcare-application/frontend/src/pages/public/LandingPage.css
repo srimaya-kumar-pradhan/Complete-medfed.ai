@@ -1,0 +1,352 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Landing Page — Clean, Minimal, Content-Focused Typography
+   Strict Monochrome / No stickers / Pure text aesthetic
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-landing-page {
+  background-color: var(--surface-primary, #FFFFFF);
+  overflow-x: hidden;
+  color: var(--text-primary, #09090B);
+  font-family: var(--font-body);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Hero Section ───────────────────────────────── */
+.landing-hero-section {
+  position: relative;
+  padding: 64px 0 72px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-eyebrow-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted, #71717A);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-main-title {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary, #09090B);
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.hero-main-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary, #52525B);
+  max-width: 560px;
+  margin: 0;
+}
+
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.hero-roles-bar {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle, #F4F4F5);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.roles-bar-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted, #71717A);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.roles-pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.role-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary, #09090B);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.role-pill-btn:hover {
+  background-color: var(--surface-subtle, #FAFAFA);
+  border-color: var(--text-primary, #18181B);
+}
+
+/* ─── Hero Doctor Illustration (Right Column) ──────── */
+.hero-illustration-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hero-doctor-img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* ─── Sections ───────────────────────────────────── */
+.landing-section {
+  padding: 64px 0;
+}
+
+.landing-section.bg-white { background-color: #FFFFFF; }
+.landing-section.bg-light { background-color: var(--surface-secondary, #FAFAFA); }
+
+.section-head {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #71717A);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary, #09090B);
+  letter-spacing: -0.015em;
+  margin: 0 0 8px;
+}
+
+.section-subheading {
+  font-size: 14px;
+  color: var(--text-secondary, #52525B);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ─── Pillars Grid ───────────────────────────────── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.pillar-card {
+  border-radius: var(--radius-md, 8px) !important;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-default, #E4E4E7);
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+  padding: 24px;
+  transition: border-color var(--transition-fast);
+}
+
+.pillar-card:hover {
+  border-color: var(--text-primary, #18181B);
+}
+
+.pillar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.pillar-desc {
+  font-size: 13px;
+  color: var(--text-secondary, #52525B);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.pillar-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border-subtle, #F4F4F5);
+  padding-top: 14px;
+}
+
+.pillar-feature-list li {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary, #09090B);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pillar-feature-list li::before {
+  content: "—";
+  color: var(--text-muted, #71717A);
+}
+
+/* ─── Compliance Banner ──────────────────────────── */
+.compliance-banner-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.compliance-left {
+  max-width: 600px;
+}
+
+.compliance-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted, #71717A);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.compliance-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary, #09090B);
+  margin: 0 0 8px;
+  letter-spacing: -0.015em;
+}
+
+.compliance-desc {
+  font-size: 13px;
+  color: var(--text-secondary, #52525B);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.compliance-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.compliance-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--text-secondary, #52525B);
+}
+
+/* ─── Footer ─────────────────────────────────────── */
+.landing-footer {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-default, #E4E4E7);
+  padding: 32px 0;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: var(--text-muted, #71717A);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer-links-col {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary, #52525B);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--text-primary, #09090B);
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .compliance-banner-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,69 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Table Component — Minimal, Human-Designed Production Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--border-default, #E4E4E7);
+  background-color: var(--surface-card, #FFFFFF);
+  box-shadow: var(--shadow-xs);
+}
+
+.dori-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-primary, #09090B);
+}
+
+.dori-table__header {
+  background-color: var(--surface-secondary, #FAFAFA);
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+}
+
+.dori-table__head {
+  padding: 0.65rem 1rem;
+  font-weight: 500;
+  color: var(--text-secondary, #71717A);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.dori-table__body tr {
+  border-bottom: 1px solid var(--border-subtle, #F4F4F5);
+  transition: background-color var(--transition-fast);
+}
+
+.dori-table__body tr:last-child {
+  border-bottom: none;
+}
+
+.dori-table__cell {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+  color: var(--text-primary, #09090B);
+}
+
+/* Hover effect */
+.dori-table--hover .dori-table__body tr:hover {
+  background-color: var(--surface-hover, #F4F4F5);
+}
+
+/* Striped rows */
+.dori-table--striped .dori-table__body tr:nth-child(even) {
+  background-color: var(--surface-secondary, #FAFAFA);
+}
+
+/* Compact mode */
+.dori-table--compact .dori-table__head {
+  padding: 0.45rem 0.75rem;
+}
+
+.dori-table--compact .dori-table__cell {
+  padding: 0.5rem 0.75rem;
+}

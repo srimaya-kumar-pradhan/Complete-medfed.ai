@@ -1,0 +1,36 @@
+{
+  "target_labels": [
+    "No Finding",
+    "Infiltration",
+    "Effusion",
+    "Atelectasis",
+    "Nodule"
+  ],
+  "num_hospitals": 3,
+  "seed": 42,
+  "total_images": 69873,
+  "partition_method": "patient-level non-IID with skewed class probabilities",
+  "non_iid_label": "SIMULATED Non-IID Distribution",
+  "hospital_a": {
+    "train_samples": 20608,
+    "val_samples": 4586,
+    "train_patients": 4081,
+    "val_patients": 1020
+  },
+  "hospital_b": {
+    "train_samples": 12736,
+    "val_samples": 3140,
+    "train_patients": 3472,
+    "val_patients": 868
+  },
+  "hospital_c": {
+    "train_samples": 14848,
+    "val_samples": 3838,
+    "train_patients": 5000,
+    "val_patients": 1250
+  },
+  "global_test": {
+    "samples": 10117,
+    "patients": 2769
+  }
+}

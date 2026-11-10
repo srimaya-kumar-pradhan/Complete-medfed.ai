@@ -1,0 +1,121 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Care Passport QR Code Card — Production Clean Standard
+   Strict Monochrome / Minimal Aesthetic
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-qr-card-container {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.dori-qr-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.qr-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+  padding-bottom: 12px;
+}
+
+.qr-card-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #71717A);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qr-patient-name {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary, #09090B);
+  margin-top: 2px;
+  letter-spacing: -0.01em;
+}
+
+.qr-pseudo-id code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-default, #E4E4E7);
+  color: var(--text-primary, #09090B);
+}
+
+.qr-code-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-inner-frame {
+  padding: 12px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.qr-scan-hint {
+  font-size: 12px;
+  color: var(--text-muted, #71717A);
+  text-align: center;
+  max-width: 260px;
+  line-height: 1.4;
+}
+
+.qr-critical-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  padding: 12px;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+.critical-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.critical-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted, #71717A);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.critical-val {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qr-card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+  border-top: 1px solid var(--border-subtle, #F4F4F5);
+  padding-top: 10px;
+  font-family: var(--font-mono);
+}

@@ -1,0 +1,57 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Clean Border Container (Gov Healthcare Refactored)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-decorative-border {
+  position: relative;
+  background-color: var(--surface-card, #FFFFFF);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--border-default, #E2E8F0);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(15, 23, 42, 0.08));
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.dori-border-hero {
+  border: 1px solid var(--border-default, #E2E8F0);
+  background-color: #FFFFFF;
+  color: var(--text-primary, #0F172A);
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(15, 23, 42, 0.08));
+}
+
+.dori-border-card,
+.dori-border-poster {
+  border: 1px solid var(--border-default, #E2E8F0);
+  background-color: #FFFFFF;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(15, 23, 42, 0.08));
+}
+
+.dori-border-panel {
+  border: 1px solid var(--border-default, #E2E8F0);
+  border-left: 4px solid var(--dori-primary, #0F4C81);
+  background-color: #FFFFFF;
+}
+
+.dori-border-gold {
+  border: 1px solid var(--border-default, #E2E8F0);
+  border-top: 3px solid var(--dori-gold, #D97706);
+  background-color: #FFFFFF;
+}
+
+.dori-border-crimson {
+  border: 1px solid var(--border-default, #E2E8F0);
+  border-top: 3px solid var(--dori-crimson, #DC2626);
+  background-color: #FFFFFF;
+}
+
+.dori-decorative-border.interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(15, 23, 42, 0.07));
+  border-color: var(--border-strong, #CBD5E1);
+}
+
+.dori-border-inner-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}

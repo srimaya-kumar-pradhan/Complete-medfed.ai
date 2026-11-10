@@ -1,0 +1,57 @@
+.skeleton-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.dori-skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-light-gray);
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-card {
+  height: 120px;
+  width: 100%;
+}
+
+.skeleton-stat {
+  height: 100px;
+  width: 100%;
+}
+
+.skeleton-table-row {
+  height: 48px;
+  width: 100%;
+}
+
+.skeleton-text {
+  height: 18px;
+  width: 75%;
+}
+
+.skeleton-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  animation: skeleton-wave 1.5s infinite;
+}
+
+@keyframes skeleton-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

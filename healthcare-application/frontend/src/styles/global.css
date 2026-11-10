@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   DORI Global Styles — Minimal, Clean, Human-Designed Production Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Global Reset & Typography Baseline ───────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: var(--lh-normal, 1.5);
+  color: var(--text-primary, #09090B);
+  background-color: var(--surface-primary, #FFFFFF);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary, #09090B);
+  font-weight: 600;
+  letter-spacing: var(--ls-tight, -0.015em);
+  line-height: var(--lh-snug, 1.35);
+  margin: 0;
+}
+
+h1 { font-size: var(--text-2xl, 1.5rem); font-weight: 700; }
+h2 { font-size: var(--text-xl, 1.25rem); font-weight: 600; }
+h3 { font-size: var(--text-lg, 1.125rem); font-weight: 600; }
+h4 { font-size: var(--text-base, 1rem); font-weight: 600; }
+h5 { font-size: var(--text-sm, 0.875rem); font-weight: 600; }
+h6 { font-size: var(--text-xs, 0.75rem); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+
+p {
+  margin: 0;
+  color: var(--text-secondary, #71717A);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ─── Scrollbar Styling (Minimal & Unobtrusive) ────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-secondary, #FAFAFA);
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+
+/* ─── Text Selection ───────────────────────────────── */
+::selection {
+  background-color: #18181B;
+  color: #FFFFFF;
+}
+
+/* ─── Standard Form Controls ───────────────────────── */
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-primary, #09090B);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  padding: 0.5rem 0.75rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  line-height: 1.4;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--border-brand, #18181B);
+  box-shadow: 0 0 0 2px rgba(24, 24, 27, 0.08);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-tertiary, #A1A1AA);
+}
+
+input:disabled, textarea:disabled, select:disabled {
+  background-color: var(--surface-secondary, #FAFAFA);
+  color: var(--text-tertiary, #A1A1AA);
+  border-color: var(--border-subtle, #F4F4F5);
+  cursor: not-allowed;
+}
+
+/* ─── Layout Utilities ─────────────────────────────── */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-1 { flex: 1 1 0%; }
+
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.gap-6 { gap: var(--space-6); }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Focus Accessible */
+:focus-visible {
+  outline: 2px solid var(--dori-primary, #18181B);
+  outline-offset: 2px;
+}

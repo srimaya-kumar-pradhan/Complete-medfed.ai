@@ -1,0 +1,85 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Unauthorized Page Styles — Modern Clean Healthcare Security View
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-unauthorized-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6, 32px) var(--space-4, 16px);
+  background-color: var(--surface-primary, #FFFFFF);
+}
+
+.unauthorized-card {
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  border-radius: var(--radius-xl, 20px);
+  box-shadow: var(--shadow-floating);
+  border: 1px solid var(--border-default, #E2E8F0);
+}
+
+.unauthorized-icon-wrapper {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full, 9999px);
+  background-color: var(--dori-crimson-light, #FEE2E2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4, 16px);
+}
+
+.unauthorized-title {
+  font-size: var(--text-2xl, 1.5rem);
+  font-weight: var(--weight-bold, 700);
+  color: var(--text-primary, #0F172A);
+  margin-bottom: var(--space-2, 8px);
+}
+
+.unauthorized-message {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--text-secondary, #475569);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-5, 20px);
+}
+
+.unauthorized-meta-box {
+  background-color: var(--surface-secondary, #F8FAFC);
+  border: 1px solid var(--border-default, #E2E8F0);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-4, 16px);
+  width: 100%;
+  margin-bottom: var(--space-6, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+  text-align: left;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-xs, 0.75rem);
+}
+
+.meta-label {
+  color: var(--text-tertiary, #94A3B8);
+  font-weight: var(--weight-medium, 500);
+}
+
+.meta-value {
+  color: var(--text-primary, #0F172A);
+  font-weight: var(--weight-semibold, 600);
+}
+
+.unauthorized-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3, 12px);
+  width: 100%;
+}

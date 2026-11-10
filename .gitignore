@@ -1,0 +1,98 @@
+# ==============================================================================
+# Complete-medfed.ai Root .gitignore
+# ==============================================================================
+
+# ── Python & Bytecode ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Virtual Environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Node & Frontend Artifacts ─────────────────────────────────────────────────
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# ── Environment & Secrets (NEVER COMMIT) ──────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
+# ── Databases & Local Storage ─────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+storage/
+healthcare-application/backend/storage/
+clinical_portal/cases_db.json
+
+# ── Datasets & Large Raw Data ─────────────────────────────────────────────────
+DataSET/
+images_*/
+sampled_manifest.csv
+centralized_train.csv
+Data_Entry_2017.csv
+
+# ── Intermediate ML Checkpoints & Runs (Except Canonical Artifacts) ───────────
+*.pth
+*.pt
+*.onnx
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+federated-learning/runs/
+runs/
+
+# Whitelist canonical trained model artifact and registry
+!model-artifacts/best_global_model.pth
+!model-artifacts/model_registry.json
+
+# Whitelist evaluation plots and metrics
+!federated-learning/evaluation_results/*.png
+!federated-learning/evaluation_results/*.csv
+!federated-learning/evaluation_results/*.txt
+
+# ── IDE & Editor Artifacts ────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.claude/
+.ipynb_checkpoints/
+
+# ── OS Generated Files ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,41 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: var(--radius-full);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.status-size-sm {
+  padding: 2px 8px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.status-size-md {
+  padding: 3px 10px;
+  font-size: var(--text-xs);
+  line-height: 1.4;
+}
+
+/* Variant colors — icon inherits text color via currentColor in Icon */
+.status-verified   { background: var(--status-verified-bg);  color: var(--status-verified-text);  border-color: var(--color-success-border); }
+.status-completed  { background: var(--status-completed-bg); color: var(--status-completed-text); border-color: #B2DDFF; }
+.status-active     { background: var(--status-verified-bg);  color: var(--status-verified-text);  border-color: var(--color-success-border); }
+.status-pending    { background: var(--status-pending-bg);   color: var(--status-pending-text);   border-color: var(--color-warning-border); }
+.status-syncing    { background: var(--status-pending-bg);   color: var(--status-pending-text);   border-color: var(--color-warning-border); }
+.status-needs-review { background: var(--status-pending-bg); color: var(--status-pending-text);   border-color: var(--color-warning-border); }
+.status-failed     { background: var(--status-error-bg);     color: var(--status-error-text);     border-color: var(--color-error-border); }
+.status-expired    { background: var(--status-error-bg);     color: var(--status-error-text);     border-color: var(--color-error-border); }
+.status-revoked    { background: var(--status-error-bg);     color: var(--status-error-text);     border-color: var(--color-error-border); }
+.status-urgent     { background: var(--priority-urgent-bg);  color: var(--priority-urgent-text);  border-color: var(--priority-urgent-border); }
+.status-high-priority { background: var(--priority-high-bg); color: var(--priority-high-text);    border-color: var(--priority-high-border); }
+.status-offline    { background: var(--status-offline-bg);   color: var(--status-offline-text);   border-color: #D0D5DD; }
+.status-routine    { background: var(--status-routine-bg);   color: var(--status-routine-text);   border-color: #D0D5DD; }
+.status-info       { background: var(--color-info-bg);       color: var(--color-info);            border-color: var(--color-info-border); }
+.status-online     { background: var(--status-verified-bg);  color: var(--status-verified-text);  border-color: var(--color-success-border); }
+
+.status-badge-label {
+  line-height: 1;
+}

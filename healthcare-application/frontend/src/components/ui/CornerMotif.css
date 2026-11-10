@@ -1,0 +1,29 @@
+.dori-corner-motif {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  transition: transform var(--transition-slow);
+}
+
+.motif-top-left {
+  top: 6px;
+  left: 6px;
+}
+
+.motif-top-right {
+  top: 6px;
+  right: 6px;
+  transform: rotate(90deg);
+}
+
+.motif-bottom-right {
+  bottom: 6px;
+  right: 6px;
+  transform: rotate(180deg);
+}
+
+.motif-bottom-left {
+  bottom: 6px;
+  left: 6px;
+  transform: rotate(270deg);
+}

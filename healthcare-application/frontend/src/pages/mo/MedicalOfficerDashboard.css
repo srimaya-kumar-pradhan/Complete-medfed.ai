@@ -1,0 +1,95 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Medical Officer Dashboard — Minimal Production Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mo-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.opd-two-column-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.patient-queue-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.queue-patient-item {
+  padding: 10px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.queue-patient-item:hover {
+  background-color: var(--surface-hover, #F4F4F5);
+  border-color: var(--border-strong, #D4D4D8);
+}
+
+.queue-patient-item.selected {
+  background-color: var(--surface-hover, #F4F4F5);
+  border-color: #18181B;
+}
+
+.queue-pat-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0;
+}
+
+.queue-pat-sub {
+  font-size: 0.72rem;
+  color: var(--text-secondary, #71717A);
+  margin: 0;
+}
+
+.vitals-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background-color: var(--surface-secondary, #FAFAFA);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--border-default, #E4E4E7);
+  margin-bottom: 16px;
+}
+
+.vitals-summary-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.vitals-summary-label {
+  font-size: 0.68rem;
+  color: var(--text-tertiary, #A1A1AA);
+  font-weight: 500;
+}
+
+.vitals-summary-val {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+}
+
+.ai-risk-card {
+  border-left: 3px solid #18181B;
+}
+
+@media (max-width: 900px) {
+  .opd-two-column-layout {
+    grid-template-columns: 1fr;
+  }
+}

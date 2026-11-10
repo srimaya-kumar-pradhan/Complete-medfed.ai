@@ -1,0 +1,92 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Patient Dashboard — Minimal Production Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.patient-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.passport-tab-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.sovereignty-card {
+  background: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-xs);
+}
+
+.patient-profile-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patient-avatar-lg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #18181B;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qr-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--surface-secondary, #FAFAFA);
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+.qr-code-box {
+  background: #FFFFFF;
+  padding: 12px;
+  border-radius: var(--radius-sm, 6px);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+.timeline-event-card {
+  padding: 12px 14px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.consent-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+@media (max-width: 900px) {
+  .passport-tab-grid {
+    grid-template-columns: 1fr;
+  }
+}

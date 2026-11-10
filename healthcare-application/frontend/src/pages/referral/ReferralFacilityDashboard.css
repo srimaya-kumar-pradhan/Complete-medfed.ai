@@ -1,0 +1,500 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Referral Facility Dashboard Styles — Production Clean Standard
+   Strict Monochrome / Minimal Aesthetic
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.referral-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.referral-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 2-Column Workspace Grid */
+.referral-content-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Left Column: Inbound Queue */
+.referral-queue-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.queue-filter-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.queue-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  padding: 6px 10px;
+  color: var(--text-muted, #71717A);
+}
+
+.filter-input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-primary, #09090B);
+  outline: none;
+}
+
+.filter-input::placeholder {
+  color: var(--text-muted, #71717A);
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted, #71717A);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.priority-filter-tabs {
+  display: flex;
+  background-color: var(--color-gray-100, #F4F4F5);
+  border-radius: var(--radius-sm, 6px);
+  padding: 2px;
+  gap: 2px;
+}
+
+.priority-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 5px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted, #71717A);
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.priority-tab:hover {
+  color: var(--text-primary, #09090B);
+}
+
+.priority-tab.active {
+  background-color: var(--surface-card, #FFFFFF);
+  color: var(--text-primary, #09090B);
+  font-weight: 600;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+.queue-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.referral-card-item {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  outline: none;
+}
+
+.referral-card-item:hover {
+  border-color: var(--text-primary, #18181B);
+}
+
+.referral-card-item.selected {
+  border-color: var(--text-primary, #18181B);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
+  background-color: #FFFFFF;
+}
+
+.ref-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ref-token {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  background-color: var(--surface-subtle, #FAFAFA);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+.ref-reason {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ref-facility-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+}
+
+.ref-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle, #F4F4F5);
+}
+
+.ref-date {
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+  font-family: var(--font-mono);
+}
+
+/* Right Column: Intake Dossier */
+.referral-detail-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.intake-detail-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 24px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dossier-top-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+  gap: 16px;
+}
+
+.dossier-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted, #71717A);
+  margin-bottom: 4px;
+}
+
+.dossier-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary, #09090B);
+  letter-spacing: -0.02em;
+  margin: 0 0 6px 0;
+  font-family: var(--font-mono);
+}
+
+.dossier-subtitle {
+  font-size: 12px;
+  color: var(--text-muted, #71717A);
+  margin: 0;
+}
+
+.dossier-subtitle code {
+  font-family: var(--font-mono);
+  background-color: var(--surface-subtle, #FAFAFA);
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+/* Stepper Strip */
+.lifecycle-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 14px 20px;
+  overflow-x: auto;
+}
+
+.lifecycle-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex: 1;
+}
+
+.lifecycle-step:last-child {
+  flex: none;
+}
+
+.step-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border-default, #E4E4E7);
+  background-color: var(--surface-card, #FFFFFF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted, #71717A);
+  flex-shrink: 0;
+}
+
+.lifecycle-step.completed .step-circle {
+  background-color: var(--text-primary, #18181B);
+  color: #FFFFFF;
+  border-color: var(--text-primary, #18181B);
+}
+
+.lifecycle-step.current .step-circle {
+  border: 2px solid var(--text-primary, #18181B);
+  color: var(--text-primary, #18181B);
+  font-weight: 700;
+}
+
+.step-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted, #71717A);
+  white-space: nowrap;
+}
+
+.lifecycle-step.completed .step-text,
+.lifecycle-step.current .step-text {
+  color: var(--text-primary, #09090B);
+  font-weight: 600;
+}
+
+.step-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-default, #E4E4E7);
+  margin: 0 12px;
+}
+
+.lifecycle-step.completed .step-line {
+  background-color: var(--text-primary, #18181B);
+}
+
+/* Evidence & Verification Grid */
+.clinical-evidence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.referral-checklist-card {
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 16px;
+  height: 100%;
+}
+
+.checklist-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+}
+
+.checklist-header h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0;
+}
+
+.checklist-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.check-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-success, #16A34A);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.check-item strong {
+  display: block;
+  color: var(--text-primary, #09090B);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.check-item small {
+  display: block;
+  color: var(--text-muted, #71717A);
+  font-size: 11px;
+  line-height: 1.3;
+  margin-top: 1px;
+}
+
+/* Lifecycle action strip */
+.lifecycle-action-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+}
+
+.action-strip-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted, #71717A);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.action-buttons-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ready-to-complete-note,
+.completed-success-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-success, #16A34A);
+}
+
+/* Feedback Box */
+.specialist-feedback-box {
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 18px;
+  background-color: var(--surface-card, #FFFFFF);
+}
+
+.feedback-box-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.feedback-box-header h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0 0 2px 0;
+}
+
+.feedback-box-header p {
+  font-size: 12px;
+  color: var(--text-muted, #71717A);
+  margin: 0;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.specialist-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-primary, #09090B);
+  background-color: var(--surface-card, #FFFFFF);
+  outline: none;
+  resize: vertical;
+  line-height: 1.5;
+  transition: border-color var(--transition-fast);
+}
+
+.specialist-textarea:focus {
+  border-color: var(--text-primary, #18181B);
+}
+
+.feedback-submit-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 960px) {
+  .referral-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .clinical-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+}

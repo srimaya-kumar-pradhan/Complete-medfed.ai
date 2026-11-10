@@ -1,0 +1,258 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   DORI Global Design System Tokens — Minimal Black, White & Neutral Gray
+   Strict Human-Designed Production Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ─── Core Palette: Black, White & Neutral Gray ────── */
+  --dori-primary: #18181B;            /* Zinc 900 - Solid Black / Primary */
+  --dori-primary-dark: #09090B;       /* Zinc 950 - Deepest Black */
+  --dori-primary-deep: #000000;
+  --dori-primary-hover: #27272A;      /* Zinc 800 - Clean Button Hover */
+  --dori-primary-light: #F4F4F5;      /* Zinc 100 - Clean Active Pill */
+  --dori-primary-50: #FAFAFA;
+
+  --dori-navy: #18181B;
+  --dori-navy-dark: #09090B;
+  --dori-navy-light: #27272A;
+
+  /* ─── Surfaces ─────────────────────────────────────── */
+  --surface-primary: #FFFFFF;         /* Primary Background: Pure White */
+  --surface-secondary: #FAFAFA;       /* Secondary Background: Very Light Neutral Gray */
+  --surface-tertiary: #F4F4F5;        /* Zinc 100 - Subtle Dividers / Headers */
+  --surface-card: #FFFFFF;            /* Pure White Card */
+  --surface-card-hover: #FFFFFF;
+  --surface-elevated: #FFFFFF;        /* Modals & Menus */
+  --surface-hover: #F4F4F5;
+  --surface-active: #E4E4E7;
+  --surface-overlay: rgba(0, 0, 0, 0.45);
+  --surface-glass: #FFFFFF;
+
+  /* ─── Typography Colors ────────────────────────────── */
+  --text-primary: #09090B;            /* Near-Black: High Contrast & Readability */
+  --text-secondary: #71717A;          /* Zinc 500: Neutral Gray for Descriptions */
+  --text-tertiary: #A1A1AA;           /* Zinc 400: Metadata & Minor Hints */
+  --text-inverse: #FFFFFF;            /* Pure White */
+  --text-brand: #18181B;
+  --text-accent: #18181B;
+
+  /* ─── Border Colors ────────────────────────────────── */
+  --border-default: #E4E4E7;          /* Zinc 200: Subtle Light Neutral Border */
+  --border-subtle: #F4F4F5;           /* Zinc 100: Soft Section Line */
+  --border-strong: #D4D4D8;           /* Zinc 300: Focus & Inputs */
+  --border-brand: #18181B;
+  --border-focus: #18181B;
+
+  /* ─── Functional-Only Semantic Status Colors ───────── */
+  /* Success (Active, Verified, Synced) */
+  --color-success: #16A34A;
+  --color-success-bg: #F0FDF4;
+  --color-success-border: #BBF7D0;
+  --color-success-text: #15803D;
+
+  /* Warning (Care Gaps, Pending Actions) */
+  --color-warning: #D97706;
+  --color-warning-bg: #FFFBEB;
+  --color-warning-border: #FDE68A;
+  --color-warning-text: #B45309;
+
+  /* Error (Emergency, Urgent Clinical, Break-Glass) */
+  --color-error: #DC2626;
+  --color-error-bg: #FEF2F2;
+  --color-error-border: #FECACA;
+  --color-error-text: #B91C1C;
+
+  /* Information / Routine */
+  --color-info: #2563EB;
+  --color-info-bg: #EFF6FF;
+  --color-info-border: #BFDBFE;
+  --color-info-text: #1D4ED8;
+
+  /* Backward Compatibility Aliases for Functional Colors */
+  --dori-teal: #16A34A;
+  --dori-teal-dark: #15803D;
+  --dori-teal-deep: #14532D;
+  --dori-teal-light: #DCFCE7;
+  --dori-teal-50: #F0FDF4;
+
+  --dori-crimson: #DC2626;
+  --dori-crimson-dark: #B91C1C;
+  --dori-crimson-light: #FEE2E2;
+
+  --dori-gold: #D97706;
+  --dori-gold-dark: #B45309;
+  --dori-gold-light: #FEF3C7;
+
+  --dori-deep-green: #16A34A;
+
+  /* ─── Status Chips (Functional & Controlled) ────────── */
+  --status-verified-bg: #F0FDF4;
+  --status-verified-text: #15803D;
+  --status-verified-icon: #16A34A;
+
+  --status-pending-bg: #FFFBEB;
+  --status-pending-text: #B45309;
+  --status-pending-icon: #D97706;
+
+  --status-completed-bg: #F4F4F5;
+  --status-completed-text: #18181B;
+  --status-completed-icon: #71717A;
+
+  --status-error-bg: #FEF2F2;
+  --status-error-text: #B91C1C;
+  --status-error-icon: #DC2626;
+
+  --status-offline-bg: #F4F4F5;
+  --status-offline-text: #71717A;
+  --status-offline-icon: #A1A1AA;
+
+  --status-high-priority-bg: #FEF2F2;
+  --status-high-priority-text: #B91C1C;
+  --status-routine-bg: #F4F4F5;
+  --status-routine-text: #71717A;
+
+  /* ─── Priority Tiers ───────────────────────────────── */
+  --priority-urgent-bg: #FEF2F2;
+  --priority-urgent-text: #B91C1C;
+  --priority-urgent-border: #FECACA;
+
+  --priority-high-bg: #FFFBEB;
+  --priority-high-text: #B45309;
+  --priority-high-border: #FDE68A;
+
+  --priority-routine-bg: #F4F4F5;
+  --priority-routine-text: #18181B;
+  --priority-routine-border: #E4E4E7;
+
+  --priority-info-bg: #FAFAFA;
+  --priority-info-text: #71717A;
+  --priority-info-border: #E4E4E7;
+
+  /* ─── Typography: Inter Exclusively ────────────────── */
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 700;
+
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.6;
+
+  --ls-tight: -0.015em;
+  --ls-normal: 0;
+  --ls-wide: 0.02em;
+
+  /* ─── Spacing Scale ────────────────────────────────── */
+  --space-0: 0;
+  --space-1: 0.25rem;     /* 4px */
+  --space-2: 0.5rem;      /* 8px */
+  --space-3: 0.75rem;     /* 12px */
+  --space-4: 1rem;        /* 16px */
+  --space-5: 1.25rem;     /* 20px */
+  --space-6: 1.5rem;      /* 24px */
+  --space-7: 2rem;        /* 32px */
+  --space-8: 2.5rem;      /* 40px */
+  --space-9: 3rem;        /* 48px */
+  --space-10: 4rem;       /* 64px */
+
+  /* ─── Border & Radius (Controlled & Moderate) ──────── */
+  --border-thin: 1px;
+  --border-medium: 1.5px;
+  --border-thick: 2px;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+
+  /* ─── Subtle Production Shadows ────────────────────── */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-floating: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-glow: none;
+
+  /* ─── Transitions ──────────────────────────────────── */
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 250ms;
+  --ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: var(--duration-fast) ease;
+  --transition-base: var(--duration-base) ease;
+  --transition-slow: var(--duration-slow) ease;
+
+  /* ─── Layout Dimensions ────────────────────────────── */
+  --app-header-height: 54px;
+  --subnav-height: 40px;
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 64px;
+  --content-max-width: 1280px;
+  --mobile-bottom-nav-height: 56px;
+
+  /* ─── Aliases for Existing Components ──────────────── */
+  --dori-frame-teal: var(--dori-primary);
+  --dori-frame-teal-deep: var(--dori-primary-dark);
+  --dori-crimson-bg: #FFFFFF;
+  --dori-parchment: #FFFFFF;
+  --dori-parchment-muted: #FAFAFA;
+  --dori-parchment-light: #F4F4F5;
+  --frame-width: 0px;
+  --frame-width-mobile: 0px;
+  --card-border-width: 1px;
+  --card-offset: 0px;
+  --card-offset-mobile: 0px;
+  --card-radius: var(--radius-md);
+  --section-gap: 2.5rem;
+
+  --color-teal: var(--color-success);
+  --color-teal-dark: var(--color-success-text);
+  --color-teal-light: var(--color-success-bg);
+  --color-crimson: var(--color-error);
+  --color-crimson-dark: var(--color-error-text);
+  --color-crimson-light: var(--color-error-bg);
+  --color-gold: var(--color-warning);
+  --color-gold-dark: var(--color-warning-text);
+  --color-gold-light: var(--color-warning-bg);
+  --color-deep-green: var(--color-success);
+  --color-navy: var(--dori-primary);
+  --color-burgundy: #991B1B;
+  --color-white: #FFFFFF;
+  --color-off-white: #FAFAFA;
+  --color-cream: #FAFAFA;
+  --color-warm-gray: #71717A;
+  --color-dark-gray: #09090B;
+  --color-light-gray: #E4E4E7;
+  --color-primary: var(--dori-primary);
+  --color-primary-dark: var(--dori-primary-dark);
+  --color-primary-light: var(--dori-primary-light);
+
+  --shadow-hero: var(--shadow-sm);
+  --header-height: var(--app-header-height);
+  --corner-motif-size: 0px;
+  --corner-motif-size-mobile: 0px;
+}

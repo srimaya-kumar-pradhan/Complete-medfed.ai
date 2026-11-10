@@ -1,0 +1,61 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Reusable FormField Styles — Clean Gov Healthcare Design
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 4px);
+  margin-bottom: var(--space-4, 16px);
+  width: 100%;
+}
+
+.dori-form-field__label {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--weight-semibold, 600);
+  color: var(--text-primary, #0F172A);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1, 4px);
+}
+
+.dori-form-field__required {
+  color: var(--dori-crimson, #DC2626);
+  font-weight: var(--weight-bold, 700);
+}
+
+.dori-form-field__control {
+  position: relative;
+  width: 100%;
+}
+
+.dori-form-field__control input,
+.dori-form-field__control select,
+.dori-form-field__control textarea {
+  width: 100%;
+}
+
+.dori-form-field__hint {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--text-secondary, #475569);
+  margin: 0;
+}
+
+.dori-form-field__error {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--dori-crimson, #DC2626);
+  font-weight: var(--weight-medium, 500);
+  margin: 0;
+}
+
+.dori-form-field--error input,
+.dori-form-field--error select,
+.dori-form-field--error textarea {
+  border-color: var(--dori-crimson, #DC2626) !important;
+}
+
+.dori-form-field--error input:focus,
+.dori-form-field--error select:focus,
+.dori-form-field--error textarea:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+}

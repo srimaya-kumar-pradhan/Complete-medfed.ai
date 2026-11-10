@@ -1,0 +1,114 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Tabs Component — Minimal, Human-Designed Production Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+}
+
+/* ─── Underline Variant ────────────────────────────── */
+.dori-tabs-nav--underline {
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+  gap: var(--space-4, 16px);
+}
+
+.dori-tabs-nav--underline .dori-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 0.25rem;
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 500;
+  color: var(--text-secondary, #71717A);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  position: relative;
+  bottom: -1px;
+}
+
+.dori-tabs-nav--underline .dori-tab-btn:hover {
+  color: var(--text-primary, #09090B);
+}
+
+.dori-tabs-nav--underline .dori-tab-btn--active {
+  color: var(--text-primary, #09090B);
+  font-weight: 600;
+  border-bottom-color: var(--dori-primary, #18181B);
+}
+
+/* ─── Pills / Segmented Variant ────────────────────── */
+.dori-tabs-nav--pills {
+  background-color: var(--surface-secondary, #F4F4F5);
+  padding: 3px;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--border-default, #E4E4E7);
+  display: inline-flex;
+}
+
+.dori-tabs-nav--pills .dori-tab-btn {
+  background: none;
+  border: none;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary, #71717A);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.dori-tabs-nav--pills .dori-tab-btn:hover {
+  color: var(--text-primary, #09090B);
+}
+
+.dori-tabs-nav--pills .dori-tab-btn--active {
+  background-color: #FFFFFF;
+  color: var(--text-primary, #09090B);
+  font-weight: 600;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ─── Tab Badge ────────────────────────────────────── */
+.dori-tab-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background-color: var(--surface-tertiary, #E4E4E7);
+  color: var(--text-primary, #09090B);
+  line-height: 1.2;
+}
+
+.dori-tab-badge--primary {
+  background-color: #18181B;
+  color: #FFFFFF;
+}
+
+.dori-tab-badge--warning {
+  background-color: var(--color-warning-bg, #FFFBEB);
+  color: var(--color-warning-text, #B45309);
+  border: 1px solid var(--color-warning-border, #FDE68A);
+}
+
+.dori-tab-badge--error {
+  background-color: var(--color-error-bg, #FEF2F2);
+  color: var(--color-error-text, #B91C1C);
+  border: 1px solid var(--color-error-border, #FECACA);
+}
+
+.dori-tab-badge--success {
+  background-color: var(--color-success-bg, #F0FDF4);
+  color: var(--color-success-text, #15803D);
+  border: 1px solid var(--color-success-border, #BBF7D0);
+}

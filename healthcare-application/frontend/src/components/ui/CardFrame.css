@@ -1,0 +1,182 @@
+/* ──────────────────────────────────────────────────
+   CardFrame: Indian Illustrated Content Board
+   TEAL BACKING → PARCHMENT SURFACE → INNER BORDER → CONTENT
+   ────────────────────────────────────────────────── */
+
+.dori-card-frame {
+  position: relative;
+  /* Reserve space for the offset backing */
+  margin-bottom: var(--card-offset);
+  margin-right: var(--card-offset);
+}
+
+/* ─── Teal Outer Backing (solid offset depth) ─── */
+.card-backing {
+  position: absolute;
+  inset: var(--card-offset) calc(-1 * var(--card-offset)) calc(-1 * var(--card-offset)) var(--card-offset);
+  background-color: var(--dori-frame-teal, #0d4f4f);
+  border-radius: var(--card-radius);
+  z-index: 0;
+}
+
+/* ─── Main Card Surface ─── */
+.card-surface {
+  position: relative;
+  background-color: var(--dori-parchment, #e8c84c);
+  border: var(--card-border-width) solid var(--dori-frame-teal, #0d4f4f);
+  border-radius: var(--card-radius);
+  padding: var(--space-5);
+  z-index: 1;
+}
+
+/* ─── Decorative Inner Border ─── */
+.card-inner-border {
+  position: absolute;
+  inset: 8px;
+  border: 1.5px solid var(--dori-crimson-bg, #8b1a2b);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Inner border secondary line (double-line effect) */
+.card-inner-border::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(13, 79, 79, 0.2);
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+/* Corner ornamental dots */
+.card-corner-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-gold, #c9a84c);
+  border: 1px solid var(--dori-crimson-bg, #8b1a2b);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.dot-tl { top: -3px; left: -3px; }
+.dot-tr { top: -3px; right: -3px; }
+.dot-bl { bottom: -3px; left: -3px; }
+.dot-br { bottom: -3px; right: -3px; }
+
+/* Content sits above inner border */
+.card-frame-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-3);
+}
+
+/* ═══════════════════════════════════════════════
+   VARIANT: PRIMARY — Full parchment-gold poster card
+   ═══════════════════════════════════════════════ */
+.card-frame-primary .card-surface {
+  background-color: var(--dori-parchment, #e8c84c);
+}
+
+.card-frame-primary .card-frame-content {
+  color: var(--color-dark-gray, #2d2926);
+}
+
+/* Headings inside primary card */
+.card-frame-primary h2,
+.card-frame-primary h3 {
+  color: var(--color-dark-gray, #2d2926);
+}
+
+/* ═══════════════════════════════════════════════
+   VARIANT: SECONDARY — Lighter cream surface
+   ═══════════════════════════════════════════════ */
+.card-frame-secondary .card-surface {
+  background-color: var(--color-cream, #f5f0e6);
+  border-color: var(--color-teal, #1a6b6a);
+}
+
+.card-frame-secondary .card-backing {
+  background-color: var(--color-teal-dark, #145453);
+}
+
+.card-frame-secondary .card-inner-border {
+  border-color: var(--color-teal, #1a6b6a);
+  opacity: 0.3;
+}
+
+/* ═══════════════════════════════════════════════
+   VARIANT: DOCUMENT — Clean parchment for forms
+   ═══════════════════════════════════════════════ */
+.card-frame-document .card-surface {
+  background-color: #faf6e8;
+  border-color: var(--dori-frame-teal, #0d4f4f);
+}
+
+.card-frame-document .card-backing {
+  background-color: var(--dori-frame-teal, #0d4f4f);
+}
+
+.card-frame-document .card-inner-border {
+  border-color: rgba(139, 26, 43, 0.35);
+}
+
+.card-frame-document .card-inner-border::after {
+  border-color: rgba(201, 168, 76, 0.25);
+}
+
+/* ═══════════════════════════════════════════════
+   VARIANT: DASHBOARD — Subtle warm-neutral
+   ═══════════════════════════════════════════════ */
+.card-frame-dashboard .card-surface {
+  background-color: var(--color-white, #ffffff);
+  border-color: var(--color-light-gray, #e8e4e0);
+  border-width: 1px;
+}
+
+.card-frame-dashboard .card-backing {
+  background-color: var(--color-teal, #1a6b6a);
+  inset: 3px -3px -3px 3px;
+}
+
+.card-frame-dashboard .card-inner-border {
+  display: none;
+}
+
+.card-frame-dashboard .card-frame-content {
+  padding: var(--space-2);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .dori-card-frame {
+    margin-bottom: var(--card-offset-mobile);
+    margin-right: var(--card-offset-mobile);
+  }
+
+  .card-backing {
+    inset: var(--card-offset-mobile) calc(-1 * var(--card-offset-mobile)) calc(-1 * var(--card-offset-mobile)) var(--card-offset-mobile);
+  }
+
+  .card-surface {
+    padding: var(--space-4);
+  }
+
+  .card-inner-border {
+    inset: 5px;
+  }
+
+  .card-frame-content {
+    padding: var(--space-2);
+  }
+
+  .card-corner-dot {
+    width: 4px;
+    height: 4px;
+  }
+  .dot-tl { top: -2px; left: -2px; }
+  .dot-tr { top: -2px; right: -2px; }
+  .dot-bl { bottom: -2px; left: -2px; }
+  .dot-br { bottom: -2px; right: -2px; }
+}

@@ -1,0 +1,667 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Federated Learning Console Styles — Production Clean Standard
+   Strict Monochrome / Minimal Aesthetic
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.fed-learning-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fed-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Toast notifications */
+.fed-toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.fed-toast.success {
+  background-color: var(--color-success-bg, #F0FDF4);
+  border: 1px solid var(--color-success-border, #BBF7D0);
+  color: var(--color-success-text, #15803D);
+}
+
+.fed-toast.info {
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  color: var(--text-primary, #09090B);
+}
+
+/* Navigation Tabs */
+.fed-nav-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+  margin-top: 4px;
+  overflow-x: auto;
+}
+
+.fed-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted, #71717A);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+.fed-tab:hover {
+  color: var(--text-primary, #09090B);
+}
+
+.fed-tab.active {
+  color: var(--text-primary, #09090B);
+  border-bottom-color: var(--text-primary, #09090B);
+  font-weight: 600;
+}
+
+/* Tab 1: Privacy Mandate & Architecture */
+.fed-network-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.privacy-mandate-banner {
+  display: flex;
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+  gap: 24px;
+}
+
+.mandate-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mandate-divider {
+  width: 1px;
+  background-color: var(--border-default, #E4E4E7);
+}
+
+.mandate-tag-shield,
+.mandate-tag-network {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary, #18181B);
+  width: fit-content;
+}
+
+.mandate-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0;
+}
+
+.mandate-desc {
+  font-size: 13px;
+  color: var(--text-secondary, #52525B);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Architecture Diagram Card */
+.architecture-diagram-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 24px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.diagram-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0 0 20px 0;
+}
+
+.topology-canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 24px;
+}
+
+.topology-level {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.topology-box {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.global-model-box {
+  max-width: 580px;
+  width: 100%;
+}
+
+.box-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary, #18181B);
+  flex-shrink: 0;
+}
+
+.box-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.box-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #71717A);
+}
+
+.box-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+}
+
+.box-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+}
+
+.box-status {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.box-status.active,
+.box-status.secure {
+  background-color: var(--color-success-bg, #F0FDF4);
+  color: var(--color-success-text, #15803D);
+  border: 1px solid var(--color-success-border, #BBF7D0);
+}
+
+/* Connector Trees */
+.topology-connector-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: 28px;
+  position: relative;
+}
+
+.topology-connector-tree .stem-down {
+  width: 1px;
+  height: 14px;
+  background-color: var(--border-default, #E4E4E7);
+}
+
+.topology-connector-tree .horizontal-bar {
+  width: 80%;
+  height: 1px;
+  background-color: var(--border-default, #E4E4E7);
+}
+
+.topology-connector-tree .branch {
+  position: absolute;
+  bottom: 0;
+  width: 1px;
+  height: 14px;
+  background-color: var(--border-default, #E4E4E7);
+}
+
+.topology-connector-tree .branch-left { left: 10%; }
+.topology-connector-tree .branch-center { left: 50%; }
+.topology-connector-tree .branch-right { right: 10%; }
+
+.topology-connector-tree.inverted {
+  transform: rotate(180deg);
+}
+
+/* Hospital Node Cards in Diagram */
+.level-nodes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 840px;
+  width: 100%;
+}
+
+.level-nodes .hospital-node-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.node-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+}
+
+.node-facility {
+  font-size: 12px;
+  color: var(--text-secondary, #52525B);
+}
+
+.node-data-pill code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+.node-training-state {
+  font-size: 11px;
+  color: var(--color-success-text, #15803D);
+  font-weight: 500;
+}
+
+.level-aggregation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 580px;
+  width: 100%;
+}
+
+.level-aggregation .topology-box {
+  width: 100%;
+}
+
+.flow-arrow {
+  color: var(--text-muted, #71717A);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Tab 2: Model Registry Table */
+.fed-models-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.models-table-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+.table-header-strip {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+}
+
+.table-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0 0 2px 0;
+}
+
+.table-sub {
+  font-size: 12px;
+  color: var(--text-muted, #71717A);
+}
+
+.fed-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.fed-table th {
+  background-color: var(--surface-subtle, #FAFAFA);
+  color: var(--text-muted, #71717A);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+}
+
+.fed-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle, #F4F4F5);
+  color: var(--text-secondary, #52525B);
+  vertical-align: middle;
+}
+
+.fed-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.fed-table tbody tr:hover {
+  background-color: var(--surface-subtle, #FAFAFA);
+}
+
+.sub-model-info {
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+  margin-top: 2px;
+}
+
+.dataset-pill,
+.privacy-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.registry-badge {
+  display: inline-flex;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.registry-badge.approved {
+  background-color: var(--color-success-bg, #F0FDF4);
+  color: var(--color-success-text, #15803D);
+  border: 1px solid var(--color-success-border, #BBF7D0);
+}
+
+.registry-badge.archived {
+  background-color: var(--color-gray-100, #F4F4F5);
+  color: var(--text-muted, #71717A);
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+.tag-demo {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted, #71717A);
+  margin-left: 6px;
+}
+
+/* Tab 3: Hospital Nodes */
+.fed-nodes-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.node-detail-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 20px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.node-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.node-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary, #18181B);
+  flex-shrink: 0;
+}
+
+.node-card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0 0 2px 0;
+}
+
+.node-card-id code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+}
+
+.node-card-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric-lbl {
+  color: var(--text-muted, #71717A);
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--text-primary, #09090B);
+}
+
+/* Tab 4: Local Storage & Vector Engine */
+.fed-storage-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.storage-status-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-md, 8px);
+  padding: 24px;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0, 0, 0, 0.04));
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.storage-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-default, #E4E4E7);
+}
+
+.storage-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary, #18181B);
+  flex-shrink: 0;
+}
+
+.storage-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted, #71717A);
+  margin-bottom: 4px;
+}
+
+.storage-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0 0 4px 0;
+}
+
+.storage-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary, #52525B);
+  margin: 0;
+}
+
+.storage-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.storage-metric-box {
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.storage-metric-label {
+  font-size: 11px;
+  color: var(--text-muted, #71717A);
+  font-weight: 500;
+}
+
+.storage-metric-value {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary, #09090B);
+}
+
+.storage-metric-value.status-connected {
+  color: var(--color-success, #16A34A);
+  font-size: 15px;
+}
+
+.storage-engine-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.detail-line {
+  color: var(--text-secondary, #52525B);
+}
+
+.detail-line strong {
+  color: var(--text-primary, #09090B);
+}
+
+.storage-notice-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: var(--surface-subtle, #FAFAFA);
+  border: 1px solid var(--border-default, #E4E4E7);
+  border-radius: var(--radius-sm, 6px);
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--text-secondary, #52525B);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .privacy-mandate-banner {
+    flex-direction: column;
+  }
+  .mandate-divider {
+    height: 1px;
+    width: 100%;
+  }
+  .level-nodes {
+    grid-template-columns: 1fr;
+  }
+  .storage-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

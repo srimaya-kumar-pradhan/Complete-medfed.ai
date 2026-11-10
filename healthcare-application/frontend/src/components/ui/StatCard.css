@@ -1,0 +1,105 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   StatCard Component — Minimal, Human-Designed Production Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-stat-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border-radius: var(--radius-md, 8px);
+  padding: 16px 20px;
+  border: 1px solid var(--border-default, #E4E4E7);
+  box-shadow: var(--shadow-xs);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color var(--transition-fast);
+}
+
+.dori-stat-card:hover {
+  border-color: var(--border-strong, #D4D4D8);
+}
+
+/* Neutral baseline for legacy accent classes */
+.stat-accent-teal,
+.stat-accent-crimson,
+.stat-accent-gold,
+.stat-accent-green,
+.stat-accent-navy {
+  border-top: 1px solid var(--border-default, #E4E4E7);
+}
+
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.stat-card-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary, #71717A);
+  letter-spacing: 0.02em;
+}
+
+.stat-card-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm, 6px);
+  background-color: var(--surface-secondary, #FAFAFA);
+  border: 1px solid var(--border-subtle, #F4F4F5);
+  color: var(--text-secondary, #71717A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-card-value {
+  font-family: var(--font-heading);
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  line-height: 1.2;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.stat-card-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-secondary, #71717A);
+}
+
+.stat-trend {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.trend-positive {
+  background-color: var(--color-success-bg, #F0FDF4);
+  color: var(--color-success-text, #15803D);
+  border: 1px solid var(--color-success-border, #BBF7D0);
+}
+
+.trend-negative {
+  background-color: var(--color-error-bg, #FEF2F2);
+  color: var(--color-error-text, #B91C1C);
+  border: 1px solid var(--color-error-border, #FECACA);
+}
+
+.trend-neutral {
+  background-color: var(--surface-secondary, #F4F4F5);
+  color: var(--text-secondary, #71717A);
+  border: 1px solid var(--border-default, #E4E4E7);
+}
+
+.stat-subtitle {
+  color: var(--text-tertiary, #A1A1AA);
+}

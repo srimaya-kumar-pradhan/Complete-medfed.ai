@@ -1,0 +1,149 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Button Component — Minimal Black & White Human-Designed Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2, 8px);
+  font-family: var(--font-body);
+  font-weight: 500;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dori-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ─── Sizes ────────────────────────────────────────── */
+.btn-sm {
+  padding: 0.35rem 0.65rem;
+  font-size: var(--text-xs, 0.75rem);
+  height: 30px;
+}
+
+.btn-md {
+  padding: 0.5rem 0.95rem;
+  font-size: var(--text-sm, 0.875rem);
+  height: 36px;
+}
+
+.btn-lg {
+  padding: 0.65rem 1.25rem;
+  font-size: var(--text-sm, 0.875rem);
+  height: 40px;
+}
+
+/* ─── Variants ─────────────────────────────────────── */
+/* Primary: Solid Black */
+.btn-primary {
+  background-color: var(--dori-primary, #18181B);
+  color: #FFFFFF;
+  border-color: var(--dori-primary, #18181B);
+  box-shadow: var(--shadow-xs);
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--dori-primary-hover, #27272A);
+  border-color: var(--dori-primary-hover, #27272A);
+}
+.btn-primary:active:not(:disabled) {
+  background-color: var(--dori-primary-dark, #09090B);
+}
+
+/* Secondary & Outline: Clean White with Thin Border */
+.btn-secondary,
+.btn-outline {
+  background-color: #FFFFFF;
+  color: var(--text-primary, #09090B);
+  border-color: var(--border-default, #E4E4E7);
+  box-shadow: var(--shadow-xs);
+}
+.btn-secondary:hover:not(:disabled),
+.btn-outline:hover:not(:disabled) {
+  background-color: var(--surface-hover, #F4F4F5);
+  border-color: var(--border-strong, #D4D4D8);
+  color: var(--text-primary, #09090B);
+}
+
+/* Ghost: Transparent */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-secondary, #71717A);
+  border-color: transparent;
+}
+.btn-ghost:hover:not(:disabled) {
+  background-color: var(--surface-hover, #F4F4F5);
+  color: var(--text-primary, #09090B);
+}
+
+/* Functional Contextual Buttons (Subtle, Not Loud) */
+.btn-accent,
+.btn-teal {
+  background-color: #18181B;
+  color: #FFFFFF;
+  border-color: #18181B;
+}
+.btn-accent:hover:not(:disabled),
+.btn-teal:hover:not(:disabled) {
+  background-color: #27272A;
+  border-color: #27272A;
+}
+
+.btn-gold {
+  background-color: #FFFFFF;
+  color: var(--color-warning-text, #B45309);
+  border-color: var(--color-warning-border, #FDE68A);
+}
+.btn-gold:hover:not(:disabled) {
+  background-color: var(--color-warning-bg, #FFFBEB);
+}
+
+.btn-crimson,
+.btn-danger {
+  background-color: var(--color-error, #DC2626);
+  color: #FFFFFF;
+  border-color: var(--color-error, #DC2626);
+}
+.btn-crimson:hover:not(:disabled),
+.btn-danger:hover:not(:disabled) {
+  background-color: #B91C1C;
+  border-color: #B91C1C;
+}
+
+/* Icon placement */
+.btn-icon-left,
+.btn-icon-right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Loading state */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+}
+.btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}

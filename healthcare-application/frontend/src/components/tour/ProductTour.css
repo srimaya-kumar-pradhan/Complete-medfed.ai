@@ -1,0 +1,168 @@
+/* ═══════════════════════════════════════════════════
+   Product Tour Modal — Clean Educational Experience
+   ═══════════════════════════════════════════════════ */
+
+.product-tour-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4, 16px);
+  animation: fadeIn var(--duration-fast, 150ms) ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product-tour-modal {
+  background: var(--surface-card, #ffffff);
+  border: 1px solid var(--border-default, #e2e5ea);
+  border-radius: var(--radius-lg, 12px);
+  max-width: 580px;
+  width: 100%;
+  box-shadow: var(--shadow-lg, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tour-top-bar {
+  padding: var(--space-3, 12px) var(--space-5, 20px);
+  background: var(--surface-primary, #fafaf8);
+  border-bottom: 1px solid var(--border-default, #e2e5ea);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-step-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-teal, #0d9488);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tour-close-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--text-secondary, #5a6577);
+  cursor: pointer;
+}
+
+.tour-close-btn:hover {
+  background: #ffffff;
+  color: var(--text-primary, #1a2332);
+}
+
+.tour-step-body {
+  padding: var(--space-6, 24px) var(--space-5, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+}
+
+.tour-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg, 12px);
+  background: #f0fdfa;
+  border: 1px solid #ccfbf1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tour-step-title {
+  font-size: var(--text-lg, 18px);
+  font-weight: 700;
+  color: var(--text-primary, #1a2332);
+  margin: 0;
+}
+
+.tour-step-desc {
+  font-size: var(--text-sm, 13px);
+  color: var(--text-secondary, #5a6577);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tour-innovations-box {
+  background: var(--surface-primary, #fafaf8);
+  border: 1px solid var(--border-subtle, #f0f1f3);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-4, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+}
+
+.innovations-heading {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary, #1a2332);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.innovations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.innovations-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2, 8px);
+  font-size: var(--text-xs, 12px);
+  color: var(--text-secondary, #5a6577);
+  line-height: 1.4;
+}
+
+.tour-footer {
+  padding: var(--space-4, 16px) var(--space-5, 20px);
+  border-top: 1px solid var(--border-default, #e2e5ea);
+  background: var(--surface-primary, #fafaf8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-dots-wrap {
+  display: flex;
+  gap: 6px;
+}
+
+.tour-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--border-default, #e2e5ea);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all var(--duration-fast, 150ms) ease;
+}
+
+.tour-dot.active {
+  background: var(--color-teal, #0d9488);
+  width: 20px;
+}
+
+.tour-actions-group {
+  display: flex;
+  gap: var(--space-2, 8px);
+}

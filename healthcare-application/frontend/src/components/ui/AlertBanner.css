@@ -1,0 +1,96 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AlertBanner Component — Minimal Functional Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-alert-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3, 12px);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm, 6px);
+  border: 1px solid var(--border-default, #E4E4E7);
+  background-color: var(--surface-secondary, #FAFAFA);
+  margin-bottom: var(--space-4, 16px);
+  font-size: var(--text-sm, 0.875rem);
+}
+
+.dori-alert-banner__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.dori-alert-banner__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.dori-alert-banner__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.01em;
+}
+
+.dori-alert-banner__message {
+  color: inherit;
+  font-size: 0.8rem;
+  line-height: var(--lh-normal);
+}
+
+.dori-alert-banner__action {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.dori-alert-banner__dismiss {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.dori-alert-banner__dismiss:hover {
+  opacity: 1;
+}
+
+/* Functional Variants */
+.dori-alert-banner--info {
+  background-color: var(--color-info-bg, #EFF6FF);
+  border-color: var(--color-info-border, #BFDBFE);
+  color: var(--color-info-text, #1D4ED8);
+}
+
+.dori-alert-banner--warning {
+  background-color: var(--color-warning-bg, #FFFBEB);
+  border-color: var(--color-warning-border, #FDE68A);
+  color: var(--color-warning-text, #B45309);
+}
+
+.dori-alert-banner--error {
+  background-color: var(--color-error-bg, #FEF2F2);
+  border-color: var(--color-error-border, #FECACA);
+  color: var(--color-error-text, #B91C1C);
+}
+
+.dori-alert-banner--success {
+  background-color: var(--color-success-bg, #F0FDF4);
+  border-color: var(--color-success-border, #BBF7D0);
+  color: var(--color-success-text, #15803D);
+}
+
+.dori-alert-banner--neutral {
+  background-color: var(--surface-secondary, #FAFAFA);
+  border-color: var(--border-default, #E4E4E7);
+  color: var(--text-primary, #09090B);
+}

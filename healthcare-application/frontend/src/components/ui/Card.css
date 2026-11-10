@@ -1,0 +1,85 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Card Component — Minimal, Human-Designed Production Standard
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dori-card {
+  background-color: var(--surface-card, #FFFFFF);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--border-default, #E4E4E7);
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color var(--transition-fast);
+}
+
+.dori-card--elevated {
+  box-shadow: var(--shadow-sm);
+}
+
+.dori-card--bordered {
+  border: 1px solid var(--border-default, #E4E4E7);
+  box-shadow: none;
+}
+
+.dori-card--flat {
+  background-color: var(--surface-secondary, #FAFAFA);
+  border-color: var(--border-default, #E4E4E7);
+  box-shadow: none;
+}
+
+/* Neutral borders for legacy classes */
+.dori-card--primary,
+.dori-card--teal {
+  border-top: 1px solid var(--border-default, #E4E4E7);
+}
+
+/* Padding scale */
+.dori-card--p-none { padding: 0; }
+.dori-card--p-sm { padding: var(--space-3, 12px); }
+.dori-card--p-md { padding: var(--space-5, 20px); }
+.dori-card--p-lg { padding: var(--space-6, 24px); }
+
+/* Header */
+.dori-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3, 12px);
+  margin-bottom: var(--space-4, 16px);
+  padding-bottom: var(--space-3, 12px);
+  border-bottom: 1px solid var(--border-subtle, #F4F4F5);
+}
+
+.dori-card__title {
+  font-size: var(--text-base, 1rem);
+  font-weight: 600;
+  color: var(--text-primary, #09090B);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+  letter-spacing: var(--ls-tight, -0.015em);
+}
+
+.dori-card__description {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--text-secondary, #71717A);
+  margin-top: 2px;
+}
+
+/* Content */
+.dori-card__content {
+  flex: 1;
+}
+
+/* Footer */
+.dori-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3, 12px);
+  margin-top: var(--space-4, 16px);
+  padding-top: var(--space-3, 12px);
+  border-top: 1px solid var(--border-subtle, #F4F4F5);
+}
